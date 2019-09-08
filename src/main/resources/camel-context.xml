@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns="http://www.springframework.org/schema/beans"
+       xsi:schemaLocation="
+         http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+         http://camel.apache.org/schema/spring http://camel.apache.org/schema/spring/camel-spring.xsd">
+
+    <camelContext id="SampleCamel" xmlns="http://camel.apache.org/schema/spring">
+
+        <rest path="/users" apiDocs="true" consumes="application/json" produces="application/json" bindingMode="json">
+            <description>User REST service</description>
+            <get outType="nz.section6.User[]">
+                <description>Find all Users</description>
+                <responseMessage message="All users successfully returned" code="200"/>
+                <to uri="bean:userService?method=findUsers"/>
+            </get>
+            <!-- this is a rest GET to view an user by the given id -->
+            <get uri="/{id}" outType="nz.section6.User">
+                <description>Find user by id</description>
+                <param name="id" type="path" description="The id of the user to get" dataType="integer"/>
+                <responseMessage message="User successfully returned" code="200"/>
+                <to uri="bean:userService?method=findUser(${header.id})"/>
+            </get>
+        </rest>
+
+    </camelContext>
+
+</beans>
