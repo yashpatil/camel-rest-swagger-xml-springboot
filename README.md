@@ -8,3 +8,6 @@ It provides a simple REST service that is created with Camel REST DSL in XML for
 All examples I found documented online were Spring Boot with Java DSL or OSGi/blueprint XML without Spring Boot.
 
 To get to this stage required a bit of rerun and debug, and I thought this would be a good starting point for someone else facing the same issue.
+
+
+To access the Swagger UI, browse to: `http://localhost:8080/webjars/swagger-ui/index.html?url=/api/api-doc`
