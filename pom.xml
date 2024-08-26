@@ -17,7 +17,7 @@
         <version.fuse.bom>7.4.0.fuse-sb2-740019-redhat-00005</version.fuse.bom>
         <version.fuse.plugin>2.23.2.fuse-740011-redhat-00001</version.fuse.plugin>
 
-        <version.swagger-ui>3.13.0</version.swagger-ui>
+        <version.swagger-ui>3.23.11</version.swagger-ui>
         <version.webjars.locator>0.33</version.webjars.locator>
 
         <version.maven.compiler.plugin>3.5.1</version.maven.compiler.plugin>
